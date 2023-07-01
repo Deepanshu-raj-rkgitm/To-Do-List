@@ -1,0 +1,276 @@
+:root {
+	--dark: #374151;
+	--darker: #1F2937;
+	--darkest: #111827;
+	--grey: #6B7280;
+	--pink: #EC4899;
+	--purple: #8B5CF6;
+	--light: #EEE;
+	--green: #34d399;
+	--orange: #ffa500;
+}
+
+* {
+	margin: 0;
+	box-sizing: border-box;
+	font-family: "Fira sans", sans-serif;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	color: #FFF;
+	background-color: rgb(10, 137, 235);
+}
+
+header {
+	padding: 2rem 1rem;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+header h1{ 
+	font-size: 2.5rem;
+	font-weight: 300;
+	color:black;
+	margin-bottom: 1rem;
+}
+
+#new-task-form {
+	display: flex;;
+}
+
+input, button {
+	appearance: none;
+	border: none;
+	outline: none;
+	background: none;
+}
+
+#new-task-input {
+	flex: 1 1 0%;
+	background-color: var(--darker);
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-right: 1rem;
+	color: var(--light);
+	font-size: 1.25rem;
+}
+
+#new-task-input::placeholder {
+	color: var(--blue);
+}
+
+#new-task-submit {
+	color: #ff3030;
+	font-size: 1.75rem;
+	font-weight: 700;
+	cursor: pointer;
+	transition: 0.4s;
+
+}
+
+#new-task-submit:hover {
+	opacity: 0.8;
+}
+
+#new-task-submit:active {
+	opacity: 0.6;
+}
+
+main {
+	flex: 1 1 0%;
+	max-width: 800px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.task-list {
+	padding: 1rem;
+}
+
+.task-list h2 {
+	font-size: 1.5rem;
+	font-weight: 300;
+	color: var(--grey);
+	margin-bottom: 1rem;
+}
+
+#tasks .task {
+	display: flex;
+	justify-content: space-between;
+	background-color: var(--darkest);
+	padding: 1rem;
+	border-radius: 1rem;
+	margin-bottom: 1rem;
+}
+
+.task .content {
+	flex: 1 1 0%;
+}
+
+.task .content .text {
+	color: var(--light);
+	font-size: 1.125rem;
+	width: 100%;
+	display: block;
+	transition: 0.4s;
+}
+
+.task .content .text:not(:read-only) {
+	color: var(--pink);
+}
+
+.task .actions {
+	display: flex;
+	margin: 0 -0.5rem;
+}
+
+.task .actions button {
+	cursor: pointer;
+	margin: 0 0.5rem;
+	font-size: 1.125rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: 0.4s;
+}
+
+.task .actions button:hover {
+	opacity: 0.8;
+}
+
+.task .actions button:active {
+	opacity: 0.6;
+}
+
+.task .actions .edit {
+	color: white;
+}
+
+.task .actions .delete {
+	color: rgb(237,204,111);
+}
+.task .actions button.completed {
+	color: orange;
+}
+	
+* {
+	margin: 0;
+	padding: 0;
+  }
+  .wrapper {
+	height: 100%;
+	width: 100%;
+	background: linear-gradient(180deg, #04fafd, 5%, #119dff, 50%, #030423);
+	position: absolute;
+  }
+  .wrapper h1 {
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	position: absolute;
+	font-family: sans-serif;
+	letter-spacing: 1px;
+	word-spacing: 2px;
+	color: #fff;
+	font-size: 40px;
+	font-weight: 888;
+	text-transform: uppercase;
+  }
+  .wrapper div {
+	height: 60px;
+	width: 60px;
+	border: 2px solid rgba(255, 255, 255, 0.7);
+	border-radius: 50px;
+	position: absolute;
+	top: 10%;
+	left: 10%;
+	animation: 4s linear infinite;
+  }
+  body {
+	--s: 25vmin;
+	--p: calc(var(--s) / 2);
+	--c1: pink;
+	--c2: dodgerblue;
+	--c3: white;
+	--bg: var(--c3);
+	--d: 4000ms;
+	--e: cubic-bezier(0.76, 0, 0.24, 1);
+	
+	background-color: var(--bg);
+	background-image:
+	  linear-gradient(45deg, var(--c1) 25%, transparent 25%),
+	  linear-gradient(-45deg, var(--c1) 25%, transparent 25%),
+	  linear-gradient(45deg, transparent 75%, var(--c2) 75%),
+	  linear-gradient(-45deg, transparent 75%, var(--c2) 75%);
+	background-size: var(--s) var(--s);
+	background-position: 
+	  calc(var(--p) *  1) calc(var(--p) *  0), 
+	  calc(var(--p) * -1) calc(var(--p) *  1), 
+	  calc(var(--p) *  1) calc(var(--p) * -1), 
+	  calc(var(--p) * -1) calc(var(--p) *  0);
+	animation: 
+	  color var(--d) var(--e) infinite,
+	  position var(--d) var(--e) infinite;
+  }
+  
+  @keyframes color {
+	0%, 25% {
+	  --bg: var(--c3);
+	}
+	26%, 50% {
+	  --bg: var(--c1);
+	}
+	51%, 75% {
+	  --bg: var(--c3);
+	}
+	76%, 100% {
+	  --bg: var(--c2);
+	}
+  }
+  
+  @keyframes position {
+	0% {
+	  background-position: 
+		calc(var(--p) *  1) calc(var(--p) *  0), 
+		calc(var(--p) * -1) calc(var(--p) *  1), 
+		calc(var(--p) *  1) calc(var(--p) * -1), 
+		calc(var(--p) * -1) calc(var(--p) *  0);
+	}
+	25% {
+	  background-position: 
+		calc(var(--p) *  1) calc(var(--p) *  4), 
+		calc(var(--p) * -1) calc(var(--p) *  5), 
+		calc(var(--p) *  1) calc(var(--p) *  3), 
+		calc(var(--p) * -1) calc(var(--p) *  4);
+	}
+	50% {
+	  background-position: 
+		calc(var(--p) *  3) calc(var(--p) * 8), 
+		calc(var(--p) * -3) calc(var(--p) * 9), 
+		calc(var(--p) *  2) calc(var(--p) * 7), 
+		calc(var(--p) * -2) calc(var(--p) * 8);
+	}
+	75% {
+	  background-position: 
+		calc(var(--p) *  3) calc(var(--p) * 12), 
+		calc(var(--p) * -3) calc(var(--p) * 13), 
+		calc(var(--p) *  2) calc(var(--p) * 11), 
+		calc(var(--p) * -2) calc(var(--p) * 12);
+	}
+	100% {    
+	  background-position: 
+		calc(var(--p) *  5) calc(var(--p) * 16), 
+		calc(var(--p) * -5) calc(var(--p) * 17), 
+		calc(var(--p) *  5) calc(var(--p) * 15), 
+		calc(var(--p) * -5) calc(var(--p) * 16);
+	}
+  }
+  
+  @media (prefers-reduced-motion) {
+	body {
+	  animation: none;
+	}
+  }
